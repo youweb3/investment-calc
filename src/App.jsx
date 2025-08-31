@@ -1,12 +1,12 @@
 import Header from './components/Header.jsx'
-import './App.css'
+import UserInput from './components/UserInput.jsx'
 
 function App() {
   
   return (
     <>
       <Header title='Ivestment Managment' />
-      {/* additional components goes here */}
+      <UserInput/>
     </>
   )
 }
