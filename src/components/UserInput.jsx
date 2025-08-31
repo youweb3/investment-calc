@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 
+const initialValues = {
+  initialInvestment: 10000,
+  annualInvestment: 1200,
+  expectedReturn: 6,
+  duration: 10
+};
+
 const UserInput = () => {
-  const [userInput, setUserInput] = useState({
-    initialInvestment: 10000,
-    annualInvestment: 1200,
-    expectedReturn: 6,
-    duration: 10
-  })
+  const [userInput, setUserInput] = useState(initialValues);
 
   const [error, setError] = useState('');
 
@@ -23,13 +25,18 @@ const UserInput = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const hasInvalid = Object.values(userInput).some(value => value <=0);
+    const hasInvalid = Object.values(userInput).some(value => value <= 0);
     if (hasInvalid) {
       setError('Please fill all fields with positive values:');
       return;
     }
     setError('');
     console.log('Form submitted', userInput);
+  };
+
+  const handleReset = () => {
+    setUserInput(initialValues);
+    setError('')
   };
 
   return (
@@ -73,7 +80,8 @@ const UserInput = () => {
           />
         </div>
 
-        <button type='submit'>Submit</button>
+        <button type='submit' className='form-btn'>Submit</button>
+        <button type='button' className='form-btn' onClick={handleReset}>Reset</button>
       </form>
     </section>
   );

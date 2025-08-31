@@ -29,13 +29,12 @@
   max-width: 30rem;
   margin: 2rem auto;
   border-radius: 4px;
-  background-color: #f0f0f0;
+  background-color: #eb9f9f;
 }
 
 .input-group {
   display: flex;
   justify-content: space-between;
-  gap: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -55,6 +54,23 @@
   font-size: 1rem;
   font-weight: bold;
   color: #ef0b0b;
+}
+
+.form-btn{
+  margin: 5px;
+  padding: 3px;
+  color:white;
+  border: solid 2px white;
+  background-color: #ef0b0b;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 5rem;
+}
+
+.form-btn:hover{
+  background-color: aqua;
+  transition: 0.9s;
+  color: black;
 }
 
 @media (max-width: 600px) {
