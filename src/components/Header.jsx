@@ -1,11 +1,13 @@
 import React from 'react'
 import logo from '../assets/logo.jpg'
 
-const Header = () => {
+//We can also set a default title or subtitle so that if no one provides a prop, the same default text is displayed.
+const Header = ({title = 'Meet Your Finnacial Investment', subtitle = "Start your Investment"}) => {
   return (
     <header id="header">
       <img src={logo}/>
-      <h1>Meet Your Finnacial Investment</h1>
+      <h1>{title}</h1>
+      <h2>{subtitle}</h2>
     </header>
   );
 };
