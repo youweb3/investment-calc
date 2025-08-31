@@ -51,6 +51,12 @@
   font-size: 1rem;
 }
 
+.text-error{
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ef0b0b;
+}
+
 @media (max-width: 600px) {
   #header img {
     width: 3.5rem;
