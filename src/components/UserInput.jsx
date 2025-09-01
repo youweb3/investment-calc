@@ -1,28 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-const initialValues = {
-  initialInvestment: 10000,
-  annualInvestment: 1200,
-  expectedReturn: 6,
-  duration: 10
-};
-
-const UserInput = () => {
-  const [userInput, setUserInput] = useState(initialValues);
-
-  const [currency, setCurrency] = useState('USD')
-
-  const [error, setError] = useState('');
-
-  const handleChange = (inputIdentifier, newValue) => {
-    setUserInput(prev => ({
-      ...prev, [inputIdentifier]: +newValue
-    }));
-
-    if (error) {
-      setError('');
-    }
-  };
+const UserInput = ({ userInput, currency, setCurrency, error, setError, handleChange, handleReset, currencySymbol }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,21 +14,6 @@ const UserInput = () => {
     console.log('Form submitted', { ...userInput, currency });
 
     setCurrency('USD');
-  };
-
-  const handleReset = () => {
-    setUserInput(initialValues);
-    setError('')
-  };
-
-  const currencySymbol = () => {
-    switch (currency) {
-      case 'EUR':
-        return '€';
-      case 'GBP':
-        return '£';
-      default: return '$';
-    }
   };
 
   return (
