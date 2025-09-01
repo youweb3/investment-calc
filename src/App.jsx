@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from './components/Header.jsx'
 import UserInput from './components/UserInput.jsx'
+import OutputData from './components/OutputData.jsx';
 
 const initialValues = {
   initialInvestment: 10000,
@@ -56,8 +57,9 @@ function App() {
         handleReset={handleReset}
         currencySymbol={currencySymbol}
       />
+      <OutputData inputValue={userInput}/>
     </>
-  )
-}
+  );
+};
 
 export default App;
