@@ -73,6 +73,15 @@
   color: black;
 }
 
+.input-currency label{
+  font-size: large;
+  color:darkblue
+}
+
+#currency {
+  margin: 8px;
+}
+
 @media (max-width: 600px) {
   #header img {
     width: 3.5rem;
