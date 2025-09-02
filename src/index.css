@@ -85,7 +85,7 @@
 /* //////Table: OutputData component/// */
 
 table {
-  width: 100%;
+  /* width: 100%; */
   border-collapse: collapse;
   margin-top: 2rem;
 }
@@ -101,10 +101,20 @@ th {
   font-weight: bold;
 }
 
-/* 9 */
-
 .highlight {
   background-color: blue;
+}
+
+.output-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  
+}
+
+.chart{
+   background-color: rgb(228, 222, 233);
 }
 
 /* ////////media queries//////////// */
