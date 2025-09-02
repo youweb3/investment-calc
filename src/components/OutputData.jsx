@@ -1,7 +1,7 @@
 import React from 'react'
 import {calculateInvestmentResults} from '../util/investments';
 
-const OutputData = ({inputValue}) => {
+const OutputData = ({inputValue, currencySymbol}) => {
     const resultData = calculateInvestmentResults({
         initialInvestment: +inputValue.initialInvestment,
         annualInvestment: +inputValue.annualInvestment,
@@ -9,6 +9,9 @@ const OutputData = ({inputValue}) => {
         duration: +inputValue.duration
     });
 
+    const maxInterest = Math.max(...resultData.map(data => data.interest));
+    console.log('LARGE NUMBER',maxInterest);
+    
     return (
         <table>
             <thead>
@@ -22,12 +25,12 @@ const OutputData = ({inputValue}) => {
             </thead>
             <tbody>
                 {resultData.map((yearData, index) => (
-                    <tr key={index}>
+                    <tr key={index} className={Number(yearData.interest) === maxInterest ? 'highlight' : ''}>
                         <td>{yearData.year}</td>
-                        <td>{yearData.investmentValue.toFixed(2)}</td>
-                        <td>{yearData.interest.toFixed(2)}</td>
-                        <td>{yearData.totalInterest.toFixed(2)}</td>
-                        <td>{yearData.investedCapital.toFixed(2)}</td>
+                        <td>{currencySymbol()}{yearData.investmentValue.toFixed(2)}</td>
+                        <td>{currencySymbol()}{yearData.interest.toFixed(2)}</td>
+                        <td>{currencySymbol()}{yearData.totalInterest.toFixed(2)}</td>
+                        <td>{currencySymbol()}{yearData.investedCapital.toFixed(2)}</td>
                     </tr>
                 ))}
             </tbody>

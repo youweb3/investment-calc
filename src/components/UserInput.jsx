@@ -13,7 +13,7 @@ const UserInput = ({ userInput, currency, setCurrency, error, setError, handleCh
     setError('');
     console.log('Form submitted', { ...userInput, currency });
 
-    setCurrency('USD');
+    // setCurrency('USD');
   };
 
   return (

@@ -57,7 +57,7 @@ function App() {
         handleReset={handleReset}
         currencySymbol={currencySymbol}
       />
-      <OutputData inputValue={userInput}/>
+      <OutputData inputValue={userInput} currencySymbol={currencySymbol}/>
     </>
   );
 };
