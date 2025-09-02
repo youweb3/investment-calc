@@ -32,6 +32,13 @@ function App() {
     setError('');
   }
 
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: currency,
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  });
+
   const currencySymbol = () => {
     switch (currency) {
       case 'EUR':
@@ -57,7 +64,7 @@ function App() {
         handleReset={handleReset}
         currencySymbol={currencySymbol}
       />
-      <OutputData inputValue={userInput} currencySymbol={currencySymbol}/>
+      <OutputData inputValue={userInput} formatter={formatter} />
     </>
   );
 };
