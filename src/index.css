@@ -113,6 +113,24 @@ th {
   
 }
 
+.switch-btn{
+  margin: 5px;
+  padding: 6px;
+  color:white;
+  border: solid 2px rgb(14, 0, 0);
+  background-color: green;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 8rem;
+}
+
+.switch-btn:hover{
+  background-color: #ef0b0b;
+  border:solid 2px blue;
+  transition: 0.9s;
+  color: black;
+}
+
 .chart{
    background-color: rgb(228, 222, 233);
 }
