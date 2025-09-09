@@ -15,6 +15,10 @@ const OutputData = ({ inputValue, formatter }) => {
 
     const [viewMode, setViewMode] = useState('yearly'); // "yearly" | "monthly"
 
+    if (inputValue.duration <= 0) {
+        return <p className="text-errors">Please enter a duration greater than 0 years</p>;
+    }
+
     // Compute monthly data from yearly resultData
     const monthlyData = resultData.flatMap((year) => {
         const monthlyArray = [];

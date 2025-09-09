@@ -75,3 +75,7 @@ export default App;
 //The browser- provided Intl API is used to prepare a formatter object
 //This object offers a 'format()' method that can be used to format nummbers a currency
 //Example Usage: formatter.format(1000) => 1.000
+
+// const userenterValid =userInput.year.duration >= 1
+//       {!userenterValid && <p>Pleaae ensure year invested greataer than zero</p>}
+//       {userenterValid && <OutputData inputValue={userInput} formatter={formatter} />}

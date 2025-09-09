@@ -56,6 +56,15 @@
   color: #ef0b0b;
 }
 
+/* duration error */
+.text-errors {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ef0b0b;
+  display: flex;
+  justify-content: center;
+}
+
 .form-btn{
   margin: 5px;
   padding: 3px;
