@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { calculateInvestmentResults } from '../util/investments';
 import InvestmentChart from './InvestmentChart';
 import ResultTable from './ResultTable';
+import MonthlyResult from './MonthlyResult';
 
 const OutputData = ({ inputValue, formatter }) => {
     // Call the function to calculate investment data based on user input
@@ -39,13 +40,17 @@ const OutputData = ({ inputValue, formatter }) => {
 
     // Select data for display based on toggle
     const displayData = viewMode === 'yearly' ? resultData : monthlyData;
+    
     return (
         <div className='output-container'>
-            <button className='switch-btn'
-                onClick={() => setViewMode(viewMode === 'yearly' ? 'monthly' : 'yearly')}
-            >
-                {viewMode === 'yearly' ? 'Switch to Monthly' : 'Switch to Yearly'}
-            </button>
+
+            <MonthlyResult
+            resultData={resultData}
+            displayData={displayData}
+            viewMode={viewMode}
+            setViewMode={setViewMode}
+            formatter={formatter}
+            />
 
             <ResultTable
                 resultData={resultData}
