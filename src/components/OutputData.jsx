@@ -4,6 +4,7 @@ import { calculateInvestmentResults } from '../util/investments';
 import InvestmentChart from './InvestmentChart';
 import ResultTable from './ResultTable';
 import MonthlyResult from './MonthlyResult';
+import { generatepdf } from '../util/generatereport'
 
 const OutputData = ({ inputValue, formatter }) => {
     // Call the function to calculate investment data based on user input
@@ -40,17 +41,27 @@ const OutputData = ({ inputValue, formatter }) => {
 
     // Select data for display based on toggle
     const displayData = viewMode === 'yearly' ? resultData : monthlyData;
-    
+
     return (
         <div className='output-container'>
 
             <MonthlyResult
-            resultData={resultData}
-            displayData={displayData}
-            viewMode={viewMode}
-            setViewMode={setViewMode}
-            formatter={formatter}
+                resultData={resultData}
+                displayData={displayData}
+                viewMode={viewMode}
+                setViewMode={setViewMode}
+                formatter={formatter}
             />
+
+            <button onClick={() => generatepdf({
+                initialInvestment: inputValue.initialInvestment,
+                annualInvestment: inputValue.annualInvestment,
+                expectedReturn: inputValue.expectedReturn,
+                duration: inputValue.duration,
+                results: resultData
+            })}>
+                Download PDF
+            </button>
 
             <ResultTable
                 resultData={resultData}
